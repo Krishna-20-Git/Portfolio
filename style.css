@@ -1004,6 +1004,9 @@ main {
 
 .book-card {
     position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
     height: 390px;
     background: transparent !important;
     border: none !important;
@@ -1034,6 +1037,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     text-align: left;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .inside-title {
@@ -2084,4 +2088,68 @@ html.lenis {
 /* Disable body overflow during preloader */
 body.preloading {
     overflow: hidden !important;
+}
+
+/* --- Project Cards Responsive Translations on Hover / Open to Prevent Viewport Clipping --- */
+@media (min-width: 993px) {
+    /* 3 column grid layout */
+    .project-card:nth-child(3n+1):hover .project-card-inside,
+    .project-card:nth-child(3n+1).open-book .project-card-inside {
+        transform: translateX(110px);
+    }
+    .project-card:nth-child(3n+1):hover .project-card-cover,
+    .project-card:nth-child(3n+1).open-book .project-card-cover {
+        transform: translateX(110px) rotateY(-130deg);
+    }
+
+    .project-card:nth-child(3n+2):hover .project-card-inside,
+    .project-card:nth-child(3n+2).open-book .project-card-inside {
+        transform: translateX(30px);
+    }
+    .project-card:nth-child(3n+2):hover .project-card-cover,
+    .project-card:nth-child(3n+2).open-book .project-card-cover {
+        transform: translateX(30px) rotateY(-130deg);
+    }
+
+    .project-card:nth-child(3n):hover .project-card-inside,
+    .project-card:nth-child(3n).open-book .project-card-inside {
+        transform: translateX(-40px);
+    }
+    .project-card:nth-child(3n):hover .project-card-cover,
+    .project-card:nth-child(3n).open-book .project-card-cover {
+        transform: translateX(-40px) rotateY(-130deg);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    /* 2 column grid layout */
+    .project-card:nth-child(2n+1):hover .project-card-inside,
+    .project-card:nth-child(2n+1).open-book .project-card-inside {
+        transform: translateX(90px);
+    }
+    .project-card:nth-child(2n+1):hover .project-card-cover,
+    .project-card:nth-child(2n+1).open-book .project-card-cover {
+        transform: translateX(90px) rotateY(-130deg);
+    }
+
+    .project-card:nth-child(2n):hover .project-card-inside,
+    .project-card:nth-child(2n).open-book .project-card-inside {
+        transform: translateX(-25px);
+    }
+    .project-card:nth-child(2n):hover .project-card-cover,
+    .project-card:nth-child(2n).open-book .project-card-cover {
+        transform: translateX(-25px) rotateY(-130deg);
+    }
+}
+
+@media (max-width: 768px) {
+    /* 1 column grid layout: scale down slightly and shift to keep pages fully on-screen */
+    .project-card:hover .project-card-inside,
+    .project-card.open-book .project-card-inside {
+        transform: scale(0.7) translateX(110px);
+    }
+    .project-card:hover .project-card-cover,
+    .project-card.open-book .project-card-cover {
+        transform: scale(0.7) translateX(110px) rotateY(-130deg);
+    }
 }
