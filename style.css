@@ -1433,6 +1433,7 @@ a.method-item:hover {
 .method-text {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .method-label {
@@ -1447,6 +1448,8 @@ a.method-item:hover {
     font-size: 1.08rem;
     font-weight: 600;
     color: var(--text-primary);
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 /* Contact Form */
