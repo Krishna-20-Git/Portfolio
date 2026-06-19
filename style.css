@@ -998,6 +998,10 @@ main {
     perspective: 1200px;
 }
 
+.project-card.hide {
+    display: none !important;
+}
+
 .book-card {
     position: relative;
     height: 390px;
