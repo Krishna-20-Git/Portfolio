@@ -67,11 +67,15 @@
     scroll-behavior: smooth;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-primary);
     background-color: var(--bg-main);
     color: var(--text-primary);
-    overflow-x: hidden;
     line-height: 1.6;
     transition: background-color var(--transition-normal), color var(--transition-normal);
 }
@@ -350,8 +354,9 @@ main {
     flex-direction: column;
     gap: 2rem;
     z-index: 999;
-    transition: right var(--transition-normal);
+    transition: right var(--transition-normal), visibility var(--transition-normal);
     box-shadow: -15px 0 35px rgba(46, 41, 35, 0.08);
+    visibility: hidden;
 }
 
 [data-theme="dark"] .mobile-navbar {
@@ -360,6 +365,7 @@ main {
 
 .mobile-navbar.open {
     right: 0;
+    visibility: visible;
 }
 
 .mobile-link {
@@ -1672,6 +1678,12 @@ a.method-item:hover {
     
     .bento-dashboard-grid {
         grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    
+    .cell-bio, .cell-avatar, .cell-stats, .cell-terminal {
+        grid-column: auto !important;
+        grid-row: auto !important;
     }
     
     .cell-stats {
@@ -1708,6 +1720,18 @@ a.method-item:hover {
 @media (max-width: 768px) {
     .navbar {
         display: none;
+    }
+    
+    .project-grid, .skills-bento-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bento-cell {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cell-terminal {
+        padding: 1.5rem 1.25rem;
     }
     
     .menu-toggle-btn {
