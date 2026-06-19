@@ -2092,58 +2092,58 @@ body.preloading {
 
 /* --- Project Cards Responsive Translations on Hover / Open to Prevent Viewport Clipping --- */
 @media (min-width: 993px) {
-    /* 3 column grid layout */
+    /* 3 column grid layout: scale down to 0.9 and shift to keep pages on screen and balanced */
     .project-card:nth-child(3n+1):hover .project-card-inside,
     .project-card:nth-child(3n+1).open-book .project-card-inside {
-        transform: translateX(110px);
+        transform: scale(0.9) translateX(140px);
     }
     .project-card:nth-child(3n+1):hover .project-card-cover,
     .project-card:nth-child(3n+1).open-book .project-card-cover {
-        transform: translateX(110px) rotateY(-130deg);
+        transform: scale(0.9) translateX(140px) rotateY(-130deg);
     }
 
     .project-card:nth-child(3n+2):hover .project-card-inside,
     .project-card:nth-child(3n+2).open-book .project-card-inside {
-        transform: translateX(30px);
+        transform: scale(0.9) translateX(45px);
     }
     .project-card:nth-child(3n+2):hover .project-card-cover,
     .project-card:nth-child(3n+2).open-book .project-card-cover {
-        transform: translateX(30px) rotateY(-130deg);
+        transform: scale(0.9) translateX(45px) rotateY(-130deg);
     }
 
     .project-card:nth-child(3n):hover .project-card-inside,
     .project-card:nth-child(3n).open-book .project-card-inside {
-        transform: translateX(-40px);
+        transform: scale(0.9) translateX(-50px);
     }
     .project-card:nth-child(3n):hover .project-card-cover,
     .project-card:nth-child(3n).open-book .project-card-cover {
-        transform: translateX(-40px) rotateY(-130deg);
+        transform: scale(0.9) translateX(-50px) rotateY(-130deg);
     }
 }
 
 @media (min-width: 769px) and (max-width: 992px) {
-    /* 2 column grid layout */
+    /* 2 column grid layout: scale down to 0.85 and translate */
     .project-card:nth-child(2n+1):hover .project-card-inside,
     .project-card:nth-child(2n+1).open-book .project-card-inside {
-        transform: translateX(90px);
+        transform: scale(0.85) translateX(110px);
     }
     .project-card:nth-child(2n+1):hover .project-card-cover,
     .project-card:nth-child(2n+1).open-book .project-card-cover {
-        transform: translateX(90px) rotateY(-130deg);
+        transform: scale(0.85) translateX(110px) rotateY(-130deg);
     }
 
     .project-card:nth-child(2n):hover .project-card-inside,
     .project-card:nth-child(2n).open-book .project-card-inside {
-        transform: translateX(-25px);
+        transform: scale(0.85) translateX(-30px);
     }
     .project-card:nth-child(2n):hover .project-card-cover,
     .project-card:nth-child(2n).open-book .project-card-cover {
-        transform: translateX(-25px) rotateY(-130deg);
+        transform: scale(0.85) translateX(-30px) rotateY(-130deg);
     }
 }
 
 @media (max-width: 768px) {
-    /* 1 column grid layout: scale down slightly and shift to keep pages fully on-screen */
+    /* 1 column grid layout: scale down to 0.7 and shift to keep pages fully on-screen */
     .project-card:hover .project-card-inside,
     .project-card.open-book .project-card-inside {
         transform: scale(0.7) translateX(110px);
