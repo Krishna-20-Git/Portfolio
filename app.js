@@ -355,7 +355,7 @@ function initBookCards() {
     });
 }
 
-/* --- 10. Contact Form Submission Simulator --- */
+/* --- 10. Contact Form Submission (Web3Forms) --- */
 function initContactForm() {
     const form = document.getElementById('portfolio-contact-form');
     if (!form) return;
@@ -405,22 +405,57 @@ function initContactForm() {
         submitText.textContent = 'Sending Message...';
         submitIcon.className = 'fa-solid fa-spinner fa-spin';
         
-        setTimeout(() => {
-            submitBtn.disabled = false;
-            submitText.textContent = originalText;
-            submitIcon.className = originalIconClass;
-            
-            statusMsg.textContent = 'Thank you! Message sent successfully. Krishna will contact you shortly.';
-            statusMsg.className = 'form-status-message success';
-            
-            form.reset();
-            
+        const showStatus = (text, type) => {
+            statusMsg.textContent = text;
+            statusMsg.className = 'form-status-message ' + type;
             setTimeout(() => {
                 statusMsg.textContent = '';
                 statusMsg.className = 'form-status-message';
-            }, 5000);
-            
-        }, 1500);
+            }, 8000);
+        };
+
+        const resetButton = () => {
+            submitBtn.disabled = false;
+            submitText.textContent = originalText;
+            submitIcon.className = originalIconClass;
+        };
+
+        // Paste your Web3Forms access key here (free at https://web3forms.com).
+        // It is safe to keep in public code: it can only send mail to the address you registered.
+        const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
+
+        if (WEB3FORMS_ACCESS_KEY === 'YOUR_ACCESS_KEY_HERE') {
+            resetButton();
+            showStatus('Contact form is not set up yet. Please email krishnadpsranchi@gmail.com directly.', 'error');
+            return;
+        }
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                access_key: WEB3FORMS_ACCESS_KEY,
+                subject: 'New message from your portfolio website',
+                from_name: 'Portfolio Contact Form',
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                message: messageInput.value.trim()
+            })
+        })
+        .then(res => res.json().then(data => ({ ok: res.ok && data.success, data })))
+        .then(({ ok }) => {
+            resetButton();
+            if (ok) {
+                form.reset();
+                showStatus('Thank you! Your message was sent. Krishna will get back to you shortly.', 'success');
+            } else {
+                showStatus('Something went wrong. Please email krishnadpsranchi@gmail.com directly.', 'error');
+            }
+        })
+        .catch(() => {
+            resetButton();
+            showStatus('Network error. Please email krishnadpsranchi@gmail.com directly.', 'error');
+        });
     });
 }
 
