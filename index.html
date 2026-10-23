@@ -86,6 +86,7 @@
                         <span class="tag-glow-dot"></span>
                         <span class="tag-label">IoT & WEB ARCHITECT</span>
                     </div>
+                    <div class="hero-techtext" id="hero-techtext"></div>
                     <h1 class="hero-title">
                         Building scalable <span class="gradient-text">systems</span> & digital <span class="gradient-text">craft</span>
                     </h1>
@@ -271,148 +272,196 @@
             </div>
         </section>
 
-        <!-- Projects Showcase Section (3D Book Card Style) -->
-        <section class="projects-section container" id="projects">
-            <div class="section-header reveal-up">
-                <span class="section-tag">Showcase</span>
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="accent-line"></div>
-            </div>
-
-            <!-- Filter Controls -->
-            <div class="filter-controls reveal-up" id="filter-controls">
-                <button class="filter-btn active" data-filter="all">All Work</button>
-                <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
-                <button class="filter-btn" data-filter="systems">Systems</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-            </div>
-
-            <!-- Project Grid (Book style hover cells) -->
-            <div class="project-grid" id="project-grid-container">
-                <!-- Project 1 -->
-                <article class="project-card book-card reveal-up" data-category="full-stack systems" id="project-invoice">
-                    <!-- Inside Card (Right Page) -->
-                    <div class="project-card-inside">
-                        <h4 class="inside-title">Core Achievements</h4>
-                        <ul class="project-bullets">
-                            <li><i class="fa-solid fa-bolt"></i> Async Kafka parser reduces API response latency to milliseconds.</li>
-                            <li><i class="fa-solid fa-lock"></i> Secured with stateless JSON Web Tokens (JWT).</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://invoice-frontend-tau-lemon.vercel.app/login" target="_blank" rel="noopener" class="btn-project-link">
-                                <span>Demo System</span> <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Cover Page (flaps open to the left) -->
-                    <div class="project-card-cover">
-                        <div class="cover-front">
-                            <div class="cover-screenshot-wrapper">
-                                <img src="assets/invoice_screenshot_v2.png" alt="Invoice App Mockup" class="cover-screenshot">
-                            </div>
-                            <div class="cover-content">
-                                <h3>Distributed Invoice System</h3>
-                                <span class="hover-tip">Hover to Open <i class="fa-solid fa-book-open"></i></span>
-                            </div>
-                        </div>
-                        <!-- Inside Left Page -->
-                        <div class="cover-back">
-                            <span class="project-tags">Spring Boot &bull; Kafka &bull; Postgres</span>
-                            <h4 class="inside-title">Asynchronous Billing Engine</h4>
-                            <p class="project-description">
-                                Asynchronous processing engine utilizing Kafka queues and Spring Boot to ingest bulk CSV datasets (10,000+ entries) instantly.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project-card book-card reveal-up" data-category="full-stack systems" id="project-algorithms">
-                    <!-- Inside Card (Right Page) -->
-                    <div class="project-card-inside">
-                        <h4 class="inside-title">Core Achievements</h4>
-                        <ul class="project-bullets">
-                            <li><i class="fa-solid fa-chart-bar"></i> Dynamic dashboard tracks learning session milestones.</li>
-                            <li><i class="fa-solid fa-network-wired"></i> Reduced script redundancy by 40% using Blueprint modularity.</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://dsa-platform-v2.onrender.com" target="_blank" rel="noopener" class="btn-project-link">
-                                <span>Launch Platform</span> <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Cover Page -->
-                    <div class="project-card-cover">
-                        <div class="cover-front">
-                            <div class="cover-screenshot-wrapper">
-                                <img src="assets/dsa_screenshot_v3.png" alt="DSA Platform Mockup" class="cover-screenshot">
-                            </div>
-                            <div class="cover-content">
-                                <h3>Algorithm Suite Platform</h3>
-                                <span class="hover-tip">Hover to Open <i class="fa-solid fa-book-open"></i></span>
-                            </div>
-                        </div>
-                        <!-- Inside Left Page -->
-                        <div class="cover-back">
-                            <span class="project-tags">Python &bull; Flask &bull; SQLite</span>
-                            <h4 class="inside-title">Algorithmic Learning SaaS</h4>
-                            <p class="project-description">
-                                SaaS platform unifying 28 algorithm visualizers into a modular monolith using Flask Blueprints. Tracks student progression metrics.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project-card book-card reveal-up" data-category="frontend" id="project-scheduler">
-                    <!-- Inside Card (Right Page) -->
-                    <div class="project-card-inside">
-                        <h4 class="inside-title">Core Achievements</h4>
-                        <ul class="project-bullets">
-                            <li><i class="fa-solid fa-desktop"></i> Decoupled chart renderer handles dynamic datasets smoothly.</li>
-                            <li><i class="fa-solid fa-crop"></i> Responsive Tailwind layout built for all viewports.</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://os-scheduler-visualizer.vercel.app" target="_blank" rel="noopener" class="btn-project-link">
-                                <span>Simulate Schedulers</span> <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Cover Page -->
-                    <div class="project-card-cover">
-                        <div class="cover-front">
-                            <div class="cover-screenshot-wrapper">
-                                <img src="assets/os_screenshot_v2.png" alt="OS Simulator Mockup" class="cover-screenshot">
-                            </div>
-                            <div class="cover-content">
-                                <h3>OS Scheduling Simulator</h3>
-                                <span class="hover-tip">Hover to Open <i class="fa-solid fa-book-open"></i></span>
-                            </div>
-                        </div>
-                        <!-- Inside Left Page -->
-                        <div class="cover-back">
-                            <span class="project-tags">React.js &bull; Tailwind &bull; Context</span>
-                            <h4 class="inside-title">CPU Scheduling Simulator</h4>
-                            <p class="project-description">
-                                Client-side renderer demonstrating CPU execution algorithms (FCFS, SJF, Priority, Round Robin). Dynamic updates render Gantt charting sequences.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- GitHub Prominent Bento Callout -->
-            <div class="github-bento-callout reveal-up">
-                <div class="github-bento-inner">
-                    <i class="fa-brands fa-github git-callout-icon"></i>
-                    <div class="git-info">
-                        <h3>Review commits on @Krishna-20-Git</h3>
-                        <p>Explore raw configurations, Dockerfiles, and systems integrations directly inside my public github repositories.</p>
-                    </div>
+        <!-- Projects Showcase: circular carousel stage, then full project details below -->
+        <section class="projects-section" id="projects">
+            <div class="showcase-stage" id="showcase-stage">
+                <div class="showcase-head">
+                    <span class="showcase-tag">Showcase</span>
+                    <div class="showcase-title" id="showcase-title"></div>
+                    <p class="showcase-sub">Drag the ring or click a project, then scroll down for the full breakdown.</p>
                 </div>
-                <a href="https://github.com/Krishna-20-Git" target="_blank" rel="noopener" class="btn btn-outline marigold-border magnetic" id="github-callout-btn">
-                    <span>Visit Profile</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                <div class="showcase-carousel" id="project-carousel"></div>
+
+                <div class="showcase-active" aria-live="polite">
+                    <span class="showcase-active-sub" id="active-sub"></span>
+                    <h3 class="showcase-active-title" id="active-title"></h3>
+                    <a href="#project-kriya" class="showcase-active-cta" id="active-cta">
+                        <span>View project</span> <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+
+                <a href="#project-details" class="showcase-scroll" aria-label="Scroll to project details">
+                    <span>Scroll for projects</span>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </a>
+            </div>
+
+            <div class="container projects-detail" id="project-details">
+                <div class="section-header reveal-up">
+                    <span class="section-tag">Case Studies</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="project-list">
+                    <!-- 01 Kriya -->
+                    <article class="project-row reveal-up" id="project-kriya">
+                        <div class="project-media media-duo">
+                            <img class="media-main" src="assets/kriya_web_dashboard.png" alt="Kriya web dashboard showing project and task statistics" loading="lazy">
+                            <img class="media-phone" src="assets/kriya_android_dashboard.png" alt="Kriya Android app dashboard" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-index">01</span>
+                                <span class="project-kicker">Web + Android &middot; Full-Stack</span>
+                            </div>
+                            <h3 class="project-name">Kriya &mdash; Project Management System</h3>
+                            <p class="project-summary">
+                                A project and task manager with a React web app and a React Native (Expo) Android app that share one Express API and one PostgreSQL database. Sign in with the same account on either platform and your work follows you.
+                            </p>
+                            <ul class="pr-bullets">
+                                <li><i class="fa-solid fa-shield-halved"></i> Refresh-token rotation with reuse detection, role-based access (USER / ADMIN) and an audit log.</li>
+                                <li><i class="fa-solid fa-flask"></i> 224 automated tests, with API integration tests running against a real PostgreSQL database.</li>
+                                <li><i class="fa-solid fa-bell"></i> Due-tomorrow push reminders on Android, plus offline task viewing.</li>
+                            </ul>
+                            <div class="pr-chips">
+                                <span>React 19</span><span>React Native</span><span>Express 5</span><span>PostgreSQL</span><span>Drizzle</span><span>TypeScript</span>
+                            </div>
+                            <div class="pr-links">
+                                <a href="https://kriya-eosin.vercel.app" target="_blank" rel="noopener" class="pr-link primary"><span>Live Web App</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/Krishna-20-Git/Kriya/releases/download/v1.0.0/kriya.apk" target="_blank" rel="noopener" class="pr-link"><span>Android APK</span> <i class="fa-brands fa-android"></i></a>
+                                <a href="https://github.com/Krishna-20-Git/Kriya" target="_blank" rel="noopener" class="pr-link"><span>Source</span> <i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 02 SignSpeak Glove -->
+                    <article class="project-row reveal-up" id="project-signspeak">
+                        <div class="project-media media-dark">
+                            <img class="media-main" src="assets/signspeak_glove.svg" alt="Illustration of the SignSpeak smart glove sending gestures over Bluetooth to a phone that speaks the phrase" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-index">02</span>
+                                <span class="project-kicker">Hardware + Mobile &middot; Assistive Tech</span>
+                            </div>
+                            <h3 class="project-name">SignSpeak &mdash; Sign Language to Speech Glove</h3>
+                            <p class="project-summary">
+                                A B.Tech assistive-technology project that turns hand gestures into spoken words. Flex sensors on the glove detect finger bends, an ESP32 classifies the gesture and sends it over Bluetooth LE, and a Flutter app speaks the phrase aloud.
+                            </p>
+                            <ul class="pr-bullets">
+                                <li><i class="fa-solid fa-language"></i> Speaks in 4 languages (English, Hindi, Tamil, Bengali) with 20 gesture mappings each.</li>
+                                <li><i class="fa-solid fa-microchip"></i> ESP32 + 4 flex sensors + MPU6050 for finger bend and hand orientation.</li>
+                                <li><i class="fa-brands fa-bluetooth-b"></i> BLE auto-connect, male / female voice choice, speech history and a gesture dictionary.</li>
+                            </ul>
+                            <div class="pr-chips">
+                                <span>ESP32</span><span>BLE GATT</span><span>Flutter</span><span>flutter_tts</span><span>MPU6050</span><span>Arduino C++</span>
+                            </div>
+                            <div class="pr-links">
+                                <a href="https://github.com/Krishna-20-Git/SignSpeak-Glove" target="_blank" rel="noopener" class="pr-link primary"><span>View Source</span> <i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 03 Invoice -->
+                    <article class="project-row reveal-up" id="project-invoice">
+                        <div class="project-media">
+                            <img class="media-main" src="assets/invoice_screenshot_v2.png" alt="Distributed invoice system interface" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-index">03</span>
+                                <span class="project-kicker">Backend Systems &middot; Full-Stack</span>
+                            </div>
+                            <h3 class="project-name">Distributed Invoice System</h3>
+                            <p class="project-summary">
+                                An asynchronous billing engine that uses Kafka queues and Spring Boot to ingest bulk CSV datasets (10,000+ entries) without blocking the API.
+                            </p>
+                            <ul class="pr-bullets">
+                                <li><i class="fa-solid fa-bolt"></i> Async Kafka parser keeps API response latency in the millisecond range.</li>
+                                <li><i class="fa-solid fa-lock"></i> Secured with stateless JSON Web Tokens (JWT).</li>
+                            </ul>
+                            <div class="pr-chips">
+                                <span>Spring Boot</span><span>Apache Kafka</span><span>PostgreSQL</span><span>JWT</span>
+                            </div>
+                            <div class="pr-links">
+                                <a href="https://invoice-frontend-tau-lemon.vercel.app/login" target="_blank" rel="noopener" class="pr-link primary"><span>Demo System</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/Krishna-20-Git/invoice-engine" target="_blank" rel="noopener" class="pr-link"><span>Source</span> <i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 04 Algorithm Suite -->
+                    <article class="project-row reveal-up" id="project-algorithms">
+                        <div class="project-media">
+                            <img class="media-main" src="assets/dsa_screenshot_v3.png" alt="Algorithm suite platform interface" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-index">04</span>
+                                <span class="project-kicker">SaaS &middot; Full-Stack</span>
+                            </div>
+                            <h3 class="project-name">Algorithm Suite Platform</h3>
+                            <p class="project-summary">
+                                A learning platform that unifies 28 algorithm visualizers into a modular monolith built with Flask Blueprints, and tracks student progression.
+                            </p>
+                            <ul class="pr-bullets">
+                                <li><i class="fa-solid fa-chart-bar"></i> Dashboard tracks learning session milestones.</li>
+                                <li><i class="fa-solid fa-network-wired"></i> Cut script redundancy by 40% through Blueprint modularity.</li>
+                            </ul>
+                            <div class="pr-chips">
+                                <span>Python</span><span>Flask</span><span>SQLite</span>
+                            </div>
+                            <div class="pr-links">
+                                <a href="https://dsa-platform-v2.onrender.com" target="_blank" rel="noopener" class="pr-link primary"><span>Launch Platform</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/Krishna-20-Git/dsa-platform-v2" target="_blank" rel="noopener" class="pr-link"><span>Source</span> <i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 05 OS Scheduler -->
+                    <article class="project-row reveal-up" id="project-scheduler">
+                        <div class="project-media">
+                            <img class="media-main" src="assets/os_screenshot_v2.png" alt="OS scheduling simulator interface" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="project-index">05</span>
+                                <span class="project-kicker">Frontend &middot; Simulation</span>
+                            </div>
+                            <h3 class="project-name">OS Scheduling Simulator</h3>
+                            <p class="project-summary">
+                                A client-side simulator for CPU scheduling algorithms (FCFS, SJF, Priority, Round Robin) that renders live Gantt charts as the inputs change.
+                            </p>
+                            <ul class="pr-bullets">
+                                <li><i class="fa-solid fa-desktop"></i> Decoupled chart renderer handles dynamic datasets smoothly.</li>
+                                <li><i class="fa-solid fa-crop"></i> Responsive Tailwind layout built for all viewports.</li>
+                            </ul>
+                            <div class="pr-chips">
+                                <span>React.js</span><span>Tailwind</span><span>Context API</span>
+                            </div>
+                            <div class="pr-links">
+                                <a href="https://os-scheduler-visualizer.vercel.app" target="_blank" rel="noopener" class="pr-link primary"><span>Simulate Schedulers</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/Krishna-20-Git/os-scheduler-visualizer" target="_blank" rel="noopener" class="pr-link"><span>Source</span> <i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- GitHub Prominent Bento Callout -->
+                <div class="github-bento-callout reveal-up">
+                    <div class="github-bento-inner">
+                        <i class="fa-brands fa-github git-callout-icon"></i>
+                        <div class="git-info">
+                            <h3>Review commits on @Krishna-20-Git</h3>
+                            <p>Explore raw configurations, Dockerfiles, and systems integrations directly inside my public github repositories.</p>
+                        </div>
+                    </div>
+                    <a href="https://github.com/Krishna-20-Git" target="_blank" rel="noopener" class="btn btn-outline marigold-border magnetic" id="github-callout-btn">
+                        <span>Visit Profile</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -554,6 +603,8 @@
 
     <!-- Custom Magnetic Inverting Cursor -->
     <div id="custom-cursor" class="custom-cursor"></div>
+    <script src="techtext.js"></script>
+    <script src="carousel.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
