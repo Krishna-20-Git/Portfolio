@@ -356,7 +356,7 @@ function initBookCards() {
     });
 }
 
-/* --- 10. Contact Form Submission (Web3Forms) --- */
+/* --- 10. Contact Form Submission (FormSubmit) --- */
 function initContactForm() {
     const form = document.getElementById('portfolio-contact-form');
     if (!form) return;
@@ -421,41 +421,48 @@ function initContactForm() {
             submitIcon.className = originalIconClass;
         };
 
-        // Paste your Web3Forms access key here (free at https://web3forms.com).
-        // It is safe to keep in public code: it can only send mail to the address you registered.
-        const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
+        // Sends straight to your inbox through FormSubmit (free, no account or key needed).
+        // The very first message triggers a one-time activation email to this address:
+        // open it and click "Activate Form". After that, every message arrives normally.
+        const CONTACT_EMAIL = 'krishnadpsranchi@gmail.com';
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
 
-        if (WEB3FORMS_ACCESS_KEY === 'YOUR_ACCESS_KEY_HERE') {
-            resetButton();
-            showStatus('Contact form is not set up yet. Please email krishnadpsranchi@gmail.com directly.', 'error');
-            return;
-        }
+        // Last-resort fallback so a visitor's message is never lost: open their mail app, pre-filled.
+        const openMailApp = () => {
+            const subject = encodeURIComponent('Portfolio message from ' + name);
+            const body = encodeURIComponent(message + '\n\n' + name + '\n' + email);
+            window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
+        };
 
-        fetch('https://api.web3forms.com/submit', {
+        fetch('https://formsubmit.co/ajax/' + CONTACT_EMAIL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify({
-                access_key: WEB3FORMS_ACCESS_KEY,
-                subject: 'New message from your portfolio website',
-                from_name: 'Portfolio Contact Form',
-                name: nameInput.value.trim(),
-                email: emailInput.value.trim(),
-                message: messageInput.value.trim()
+                name: name,
+                email: email,
+                message: message,
+                _subject: 'New message from your portfolio website',
+                _template: 'table',
+                _captcha: 'false'
             })
         })
-        .then(res => res.json().then(data => ({ ok: res.ok && data.success, data })))
+        .then(res => res.json().then(data => ({ ok: res.ok && String(data.success) !== 'false', data })))
         .then(({ ok }) => {
             resetButton();
             if (ok) {
                 form.reset();
                 showStatus('Thank you! Your message was sent. Krishna will get back to you shortly.', 'success');
             } else {
-                showStatus('Something went wrong. Please email krishnadpsranchi@gmail.com directly.', 'error');
+                showStatus('Could not send right now, opening your email app instead.', 'error');
+                setTimeout(openMailApp, 900);
             }
         })
         .catch(() => {
             resetButton();
-            showStatus('Network error. Please email krishnadpsranchi@gmail.com directly.', 'error');
+            showStatus('Network problem, opening your email app instead.', 'error');
+            setTimeout(openMailApp, 900);
         });
     });
 }
@@ -1040,7 +1047,6 @@ function initShowcase() {
 
     const items = [
         { src: 'assets/kriya_web_dashboard.png', alt: 'Kriya project management dashboard', title: 'Kriya', subtitle: 'Web + Android project manager', target: 'project-kriya' },
-        { src: 'assets/signspeak_glove.svg', alt: 'SignSpeak smart glove illustration', title: 'SignSpeak Glove', subtitle: 'Sign language to speech, ESP32 + Flutter', target: 'project-signspeak' },
         { src: 'assets/invoice_screenshot_v2.png', alt: 'Distributed invoice system', title: 'Invoice System', subtitle: 'Kafka + Spring Boot billing engine', target: 'project-invoice' },
         { src: 'assets/dsa_screenshot_v3.png', alt: 'Algorithm suite platform', title: 'Algorithm Suite', subtitle: '28 visualizers on Flask', target: 'project-algorithms' },
         { src: 'assets/os_screenshot_v2.png', alt: 'OS scheduling simulator', title: 'OS Scheduler', subtitle: 'CPU scheduling Gantt simulator', target: 'project-scheduler' }
