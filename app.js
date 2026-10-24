@@ -1067,8 +1067,8 @@ function initShowcase() {
         items,
         preset: 'cylinder',
         intro: 'rise',
-        cardWidth: 320,
-        aspectRatio: 1,
+        cardWidth: 400,
+        aspectRatio: 1.5, // matches the wide screenshots so nothing gets cropped
         speed: 4, // very slow drift (degrees per second)
         captions: false,
         gap: 25,
