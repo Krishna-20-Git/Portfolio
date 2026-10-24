@@ -10,7 +10,7 @@
 
     var N = 9;            // strands per button
     var M = 12;           // points per strand
-    var RANGE = 120;      // px from the button where threads can attach
+    var RANGE = 280;      // px from the button where threads can attach
     var GRAVITY = 0.42, DAMP = 0.985, ITER = 5;
 
     var canvas = document.createElement('canvas');
@@ -69,8 +69,8 @@
             document.body.classList.contains('on-landing') ||
             !!el.closest('.landing');
         return dark
-            ? { core: 'rgb(4,4,6)', rim: 'rgba(205,210,230,0.7)' }
-            : { core: 'rgb(8,8,10)', rim: 'rgba(255,255,255,0.45)' };
+            ? { core: 'rgba(238,238,246,0.95)', rim: 'rgba(0,0,0,0.55)' }
+            : { core: 'rgba(8,8,10,0.96)', rim: 'rgba(255,255,255,0.35)' };
     }
 
     function stadium(r) {
@@ -170,7 +170,7 @@
             }
             ctx.lineTo(pts[M].x, pts[M].y);
             ctx.globalAlpha = 0.5 + 0.5 * it.power;
-            ctx.strokeStyle = pal.rim; ctx.lineWidth = st.w + 2.2; ctx.stroke();
+            ctx.strokeStyle = pal.rim; ctx.lineWidth = st.w + 1.6; ctx.stroke();
             ctx.strokeStyle = pal.core; ctx.lineWidth = st.w; ctx.stroke();
             // little drop where each thread leaves the button
             ctx.fillStyle = pal.core;
