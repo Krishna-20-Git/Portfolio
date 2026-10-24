@@ -1067,9 +1067,9 @@ function initShowcase() {
         items,
         preset: 'cylinder',
         intro: 'rise',
-        cardWidth: 220,
+        cardWidth: 320,
         aspectRatio: 1,
-        speed: 14,
+        speed: 4, // very slow drift (degrees per second)
         captions: false,
         gap: 25,
         tilt: -5,
