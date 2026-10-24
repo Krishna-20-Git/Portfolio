@@ -8,33 +8,18 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
-    <!-- Terminal Splash Preloader -->
-    <div id="preloader" class="preloader">
-        <div class="preloader-content">
-            <div class="preloader-logo">Krishna<span class="logo-accent">.dev</span></div>
-            <div class="preloader-terminal" id="preloader-terminal"></div>
-            <div class="preloader-bar-container">
-                <div class="preloader-bar" id="preloader-bar"></div>
-            </div>
-        </div>
-    </div>
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
 
     <!-- Custom Sparkle Particle Cursor -->
     <div id="cursor-trail-container"></div>
-
-    <!-- Floating Avatar Image (Scrolls & Rotates dynamically between sections) -->
-    <div id="flying-avatar-container" class="flying-avatar-container">
-        <img src="assets/avatar.jpg" alt="Krishna Avatar Photo" class="flying-img">
-    </div>
 
     <!-- Ambient Canvas (Interactive Fluid Mesh) -->
     <canvas id="ambient-canvas"></canvas>
@@ -78,52 +63,33 @@
     </header>
 
     <main>
-        <!-- Hero Section (Bento Inspired Grid Intro) -->
-        <section class="hero-section" id="hero">
-            <div class="hero-content-wrapper container">
-                <div class="hero-text reveal-up">
-                    <div class="hero-tag marigold-bg-glow">
-                        <span class="tag-glow-dot"></span>
-                        <span class="tag-label">IoT & WEB ARCHITECT</span>
-                    </div>
-                    <h1 class="hero-title">
-                        Building scalable <span class="gradient-text">systems</span> & digital <span class="gradient-text">craft</span>
-                    </h1>
-                    <h2 class="hero-subtitle">
-                        I engineer <span id="typewriter" class="gradient-text-alt"></span><span class="cursor">|</span>
-                    </h2>
-                    <p class="hero-desc">
-                        Computer Science student specializing in IoT at SRMIST. Merging structured systems logic with responsive, fluid web architectures.
-                    </p>
-                    <div class="hero-ctas">
-                        <a href="#projects" id="hero-cta-work" class="btn btn-primary magnetic">
-                            <span>Open Console</span> <i class="fa-solid fa-terminal"></i>
-                        </a>
-                        <a href="#contact" id="hero-cta-contact" class="btn btn-outline magnetic">
-                            <span>Get In Touch</span>
-                        </a>
-                    </div>
-                </div>
+        <!-- Landing: dot -> "!" -> tumbling name -> PORTFOLIO -> dust gathers into a portrait -->
+        <section class="landing is-intro" id="hero" aria-label="Introduction">
+            <div class="landing-glow" aria-hidden="true"></div>
 
-                <!-- Bento-styled avatar representation -->
-                <div class="hero-bento-grid reveal-up">
-                    <!-- Slot A: Where the avatar starts -->
-                    <div class="bento-box hero-avatar-box">
-                        <div id="hero-avatar-placeholder" class="avatar-placeholder"></div>
-                    </div>
-                    <div class="bento-box hero-info-box">
-                        <div class="status-indicator">
-                            <span class="indicator-dot pulse"></span>
-                            <span class="status-text">Active Developer</span>
-                        </div>
-                        <p class="bento-subtext">Currently developing high-throughput Kafka processors & custom React controls.</p>
+            <!-- Intro stage: the dot / exclamation mark and the tumbling name -->
+            <div class="landing-stage" id="landing-stage" aria-hidden="true">
+                <div class="ls-mark" id="ls-mark"><span class="ls-bar"></span><span class="ls-dot"></span></div>
+                <div class="ls-name" id="ls-name"></div>
+            </div>
+
+            <!-- Final hero copy -->
+            <div class="landing-main" id="landing-main">
+                <h1 class="landing-title" id="landing-title" aria-label="Krishna, Portfolio"></h1>
+                <div class="landing-row">
+                    <p class="landing-role"><strong>IoT &amp; Full-Stack</strong> <em>Developer</em></p>
+                    <div class="landing-actions">
+                        <a href="#projects" class="landing-pill">Projects</a>
+                        <a href="#contact" class="landing-pill landing-pill-solid">Contact</a>
                     </div>
                 </div>
             </div>
-            <a href="#about" class="scroll-indicator" aria-label="Scroll Down" id="scroll-down-btn">
-                <span class="mouse">
-                    <span class="wheel"></span>
-                </span>
+
+            <canvas class="landing-canvas" id="landing-canvas" aria-hidden="true"></canvas>
+
+            <button type="button" class="landing-skip" id="landing-skip">Skip intro</button>
+            <a href="#about" class="scroll-indicator landing-scroll" aria-label="Scroll Down" id="scroll-down-btn">
+                <span class="mouse"><span class="wheel"></span></span>
             </a>
         </section>
 
@@ -150,7 +116,7 @@
 
                 <!-- Bento Cell 2: Slot B (Where the avatar ends up on scroll down) -->
                 <div class="bento-cell cell-avatar reveal-up">
-                    <div id="about-avatar-placeholder" class="avatar-placeholder"></div>
+                    <div id="about-avatar-placeholder" class="avatar-placeholder" role="img" aria-label="Photo of Krishna"></div>
                 </div>
 
                 <!-- Bento Cell 3: Metrics List -->
@@ -606,6 +572,8 @@
     <!-- Custom Magnetic Inverting Cursor -->
     <div id="custom-cursor" class="custom-cursor"></div>
     <script src="carousel.js"></script>
+    <script src="portrait-points.js"></script>
+    <script src="landing.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
