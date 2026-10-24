@@ -2664,3 +2664,17 @@ body.on-landing .header .menu-toggle-btn .bar {
     border: 1px solid var(--border-color);
     box-shadow: 0 10px 30px -12px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05);
 }
+
+/* --- Contrast pass 2: stats, labels, quote mark, small text --- */
+[data-theme="dark"] .stat-number {
+    background: linear-gradient(135deg, #ffffff 0%, #ffd2c8 100%);
+    -webkit-background-clip: text; background-clip: text;
+}
+[data-theme="dark"] .stat-name { color: #e4e0ec; }
+[data-theme="dark"] .quote-icon { opacity: 0.6; color: #dfe8f5; }
+[data-theme="dark"] .cell-bio p { color: #ffffff; }
+[data-theme="dark"] .section-tag,
+[data-theme="dark"] .section-header .tag { color: #dfe8f5; }
+[data-theme="dark"] .bento-cell { backdrop-filter: none; }
+[data-theme="dark"] .header .nav-link,
+[data-theme="dark"] .nav-links a { color: #ffffff; }
