@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initScrollProgressBar();
     initTypewriter();
+    initProjectFilter();
     initScrollReveal();
     initContactForm();
     initMagneticButtons();
@@ -18,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3D Motion features
     initFlyingAvatar();     // Avatar scroll-fly transition
     initScrollDriven3D();   // 3D scroll-driven cards
-    initShowcase();         // TechText headings + circular project carousel
+    initBookCards();        // Flip-book project cards
+    initShowcase();         // Circular project carousel
     
     // Awwwards UI/UX Upgrades
     initSmoothScroll();
@@ -750,8 +752,8 @@ function initSmoothScroll() {
                 const targetEl = document.querySelector(targetId);
                 if (targetEl) {
                     e.preventDefault();
-                    // Project rows sit under the fixed nav pill, so leave room for it
-                    lenis.scrollTo(targetEl, { offset: targetEl.classList.contains('project-row') ? -100 : 0 });
+                    // Project cards sit under the fixed nav pill, so leave room for it
+                    lenis.scrollTo(targetEl, { offset: targetEl.classList.contains('project-card') ? -140 : 0 });
                 }
             }
         });
@@ -1030,58 +1032,8 @@ function initSpotlightHover() {
     });
 }
 
-/* --- 21. Project Showcase: TechText headings + circular carousel --- */
+/* --- 21. Project Showcase: circular carousel --- */
 function initShowcase() {
-    const accentColor = () =>
-        getComputedStyle(document.body).getPropertyValue('--accent-primary').trim() || '#e28743';
-    const texts = [];
-
-    // Interactive wordmark in the hero
-    const heroEl = document.getElementById('hero-techtext');
-    if (heroEl && window.TechText) {
-        const t = TechText(heroEl, {
-            text: 'Krishna',
-            fontWeight: 700,
-            fontSize: 150,
-            align: 'left',
-            reveal: 'letter',
-            dashLength: 4,
-            dashGap: 2,
-            specks: 15,
-            intro: 'none',
-            clickKick: true,
-            guides: false,
-            accentColor: accentColor()
-        });
-        if (t) texts.push(t);
-    }
-
-    // Wordmark heading on the dark showcase stage
-    const titleEl = document.getElementById('showcase-title');
-    if (titleEl && window.TechText) {
-        const t = TechText(titleEl, {
-            text: 'Selected Work',
-            fontWeight: 700,
-            fontSize: 130,
-            reveal: 'letter',
-            dashLength: 4,
-            dashGap: 2,
-            specks: 15,
-            intro: 'type',
-            introDuration: 2,
-            clickKick: true,
-            guides: false,
-            accentColor: accentColor()
-        });
-        if (t) texts.push(t);
-    }
-
-    // Keep the accent in sync when the theme is toggled
-    new MutationObserver(() => {
-        const accent = accentColor();
-        texts.forEach(t => t.update({ accentColor: accent }));
-    }).observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
-
     // Circular project carousel
     const carouselEl = document.getElementById('project-carousel');
     if (!carouselEl || !window.CircularCarousel) return;
@@ -1127,7 +1079,7 @@ function initShowcase() {
         draggable: true,
         parallax: 0.3,
         stretch: 0.5,
-        fadeColor: '#000000',
+        fadeColor: 'var(--bg-main)', // fades into the page in both light and dark themes
         depthFade: 0.55,
         innerShade: 0.6,
         cornerRadius: 12,
